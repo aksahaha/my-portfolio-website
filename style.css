@@ -1,15 +1,202 @@
+/* -------------------------
+   General Reset & Body
+-------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* -------------------------
+   Header & Navigation
+-------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #222;
+  color: white;
+  flex-wrap: wrap; /* ✅ allows wrapping on smaller screens */
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #00c4cc;
+}
+
+/* -------------------------
+   Hero Section
+-------------------------- */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 20px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+.hero h2 span {
+  color: #ffdf6c;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin: 15px 0 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #ffdf6c;
+  color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #ffb400;
+  transform: scale(1.05);
+}
+
+.btn.small {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+/* -------------------------
+   Projects Preview
+-------------------------- */
+.projects-preview {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.projects-preview h2 {
+  margin-bottom: 20px;
+}
+
 .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 150px;
-    background-color: aqua;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* ✅ spacing between boxes */
+  margin-top: 30px;
 }
 
 .box {
-    width: 80px;
-    height: 80px;
-    background-color: green;
-    color: white;
+  flex: 1 1 200px; /* ✅ flexible width */
+  max-width: 250px;
+  min-width: 180px;
+  height: 120px;
+  background: #0072ff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  background: #0056c1;
+  transform: scale(1.08);
+  cursor: pointer;
+}
+
+/* -------------------------
+   Footer
+-------------------------- */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: #bbb;
+  font-size: 0.9rem;
+  margin-top: 30px;
+}
+
+/* -------------------------
+   Responsive Design
+-------------------------- */
+
+/* Phones */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
     text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .box {
+    width: 90%;
+    max-width: none;
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .container {
+    justify-content: space-evenly;
+  }
+  .box {
+    flex: 1 1 45%; /* ✅ 2 boxes per row */
+  }
+}
+main, .projects-preview, .hero {
+  padding-left: 40px;
+  padding-right: 40px; /* ✅ keep balance */
 }
